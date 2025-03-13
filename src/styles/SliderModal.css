@@ -1,0 +1,38 @@
+.slider-modal {
+    @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50;
+  }
+  
+  .slider-modal__overlay {
+    @apply absolute inset-0;
+  }
+  
+  /* Modal container adapts to image size + 10% */
+  .slider-modal__content {
+    @apply relative bg-white p-4 rounded-lg shadow-lg flex flex-col items-center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 85vw;
+    max-height: 85vh;
+    padding: 2%;
+  }
+  
+  /* Image stays inside the container and maintains aspect ratio */
+  .slider-modal__image {
+    @apply object-contain rounded-lg;
+    width: 90%;
+    height: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+  
+  /* Close button */
+  .slider-modal__close {
+    @apply absolute top-2 right-3 text-3xl text-gray-600 hover:text-gray-900 cursor-pointer;
+  }
+  
+  /* Caption text */
+  .slider-modal__text {
+    @apply text-gray-700 text-center mt-2;
+  }
+  

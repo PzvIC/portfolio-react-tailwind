@@ -1,9 +1,15 @@
 import './App.css';
+import { PexelsSlider } from './components/PexelsSlider';
+import { Header } from './components/Header';
+import { Body } from './components/Body';
 
 function App() {
   return (
     <>
-      Hello World!
+      <Header/>
+      <Body>
+        <PexelsSlider/>
+      </Body>
     </>
   );
 }

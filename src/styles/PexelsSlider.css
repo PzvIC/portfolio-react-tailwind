@@ -1,0 +1,97 @@
+.pexels-slider {
+  @apply text-center p-5 mt-20;
+}
+
+.pexels-slider__title {
+  @apply text-2xl font-bold text-blue-600 mb-2;
+}
+
+.pexels-slider__info {
+  @apply text-gray-600 mb-4;
+}
+
+.pexels-slider__link {
+  @apply text-blue-500 font-semibold hover:underline;
+}
+
+.pexels-slider__controls {
+  @apply mb-4;
+}
+
+.pexels-slider__label {
+  @apply mr-2 font-semibold;
+}
+
+.pexels-slider__select {
+  @apply border border-gray-300 rounded-md p-1;
+}
+
+.pexels-slider__error {
+  @apply text-red-500;
+}
+
+.pexels-slider__carousel {
+  @apply mt-4;
+}
+
+.pexels-slider__slide {
+  @apply p-2;
+}
+
+.pexels-slider__image {
+  @apply w-full h-[300px] object-cover rounded-lg;
+}
+
+.pexels-slider__skeleton-container {
+  @apply flex justify-center gap-4 mt-4;
+}
+
+/* Skeletons match the slider image size */
+.pexels-slider__skeleton {
+  @apply bg-gray-300 animate-pulse rounded-lg;
+  width: 100%;
+  height: 300px; /* Same height as slider images */
+  max-width: 500px;
+}
+
+/* Tablet: 2 skeletons */
+@media (max-width: 1024px) {
+  .pexels-slider__skeleton {
+    max-width: 610px;
+  }
+}
+
+/* Mobile: 1 skeleton */
+@media (max-width: 640px) {
+  .pexels-slider__skeleton {
+    max-width: 639px;
+  }
+}
+
+.slick-dots {
+  @apply flex justify-center mt-8 relative;
+  position: absolute;
+  /* bottom: -50px; */
+}
+
+/* Default dot size */
+.slick-dots li button:before {
+  @apply text-gray-500 text-lg;
+}
+
+/* Active dot */
+.slick-dots li.slick-active button:before {
+  @apply text-blue-600;
+}
+
+@media (max-width: 640px) {
+  .slick-dots {
+    position: absolute;
+    bottom: -50px;
+    @apply mt-12;
+  }
+
+  .slick-dots li button:before {
+    @apply text-sm; /* Make dots smaller */
+  }
+}
