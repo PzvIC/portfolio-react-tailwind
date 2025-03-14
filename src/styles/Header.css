@@ -1,48 +1,32 @@
-/* Block: header */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #DBEAFE; /* Light blue */
-    padding: 1rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    @apply flex items-center justify-between bg-green-200 p-8 shadow-md rounded-lg;
   }
   
-  /* Portfolio Title (aligned left, bigger size) */
   .header__title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2563EB; /* Blue-600 */
+    @apply text-5xl font-bold text-gray-600;
   }
   
-  /* Navigation (aligned right) */
+  .header__subtitle {
+    @apply text-lg text-gray-500 mt-1; /* Smaller and lighter text with spacing */
+  }
+  
   .header__nav {
-    display: flex;
+    @apply flex;
   }
   
-  /* Menu List */
   .header__menu {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 1.125rem;
+    @apply flex gap-6 text-lg;
   }
   
-  /* Menu Item */
   .header__item {
-    list-style: none;
+    @apply list-none;
   }
   
-  /* Menu Links */
   .header__link {
-    color: #3B82F6; /* Blue-500 */
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    @apply text-gray-500 font-semibold no-underline transition-colors duration-300;
   }
   
   .header__link:hover {
-    text-decoration: underline;
-    color: #1E40AF; /* Darker Blue */
+    @apply underline text-gray-900;
   }
   

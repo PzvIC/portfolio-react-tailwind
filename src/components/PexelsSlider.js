@@ -54,12 +54,12 @@ const PexelsSlider = () => {
 
   return (
     <div className="pexels-slider">
-      <h1 className="pexels-slider__title">Welcome to Pexels Image Gallery! 📸</h1>
+      <h1 className="pexels-slider__title">Image Gallery - Fetch API</h1>
       <p className="pexels-slider__info">
-        Explore stunning high-quality images from 
+        Explore the images from 
         <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer" 
           className="pexels-slider__link"> Pexels.com</a>. 
-        Choose a topic and enjoy beautiful photography! 🎨
+        Choose a topic and enjoy the photos!
       </p>
       <p className="pexels-slider__info">When you change the topic, a simulated 1-second delay will display a loading skeleton animation.</p>
 

@@ -6,15 +6,13 @@
     @apply absolute inset-0;
   }
   
-  /* Modal container adapts to image size + 10% */
   .slider-modal__content {
-    @apply relative bg-white p-4 rounded-lg shadow-lg flex flex-col items-center;
+    @apply relative bg-white p-3 pt-8 rounded-lg shadow-lg flex flex-col items-center;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 85vw;
     max-height: 85vh;
-    padding: 2%;
   }
   
   /* Image stays inside the container and maintains aspect ratio */
@@ -28,7 +26,7 @@
   
   /* Close button */
   .slider-modal__close {
-    @apply absolute top-2 right-3 text-3xl text-gray-600 hover:text-gray-900 cursor-pointer;
+    @apply absolute -top-3 right-1 font-bold text-5xl text-gray-600 hover:text-gray-900 cursor-pointer;
   }
   
   /* Caption text */

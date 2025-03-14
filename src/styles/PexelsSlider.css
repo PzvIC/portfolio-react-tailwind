@@ -3,7 +3,7 @@
 }
 
 .pexels-slider__title {
-  @apply text-2xl font-bold text-blue-600 mb-2;
+  @apply text-2xl font-bold text-gray-600 mb-2;
 }
 
 .pexels-slider__info {
@@ -68,10 +68,9 @@
   }
 }
 
+/* --- FIX FOR PAGINATION DOTS (Slick Dots) --- */
 .slick-dots {
   @apply flex justify-center mt-8 relative;
-  position: absolute;
-  /* bottom: -50px; */
 }
 
 /* Default dot size */
@@ -84,14 +83,18 @@
   @apply text-blue-600;
 }
 
+/* Move dots down ONLY on mobile */
 @media (max-width: 640px) {
   .slick-dots {
-    position: absolute;
-    bottom: -50px;
     @apply mt-12;
+    bottom: -50px !important; /* Ensure dots move lower on mobile */
   }
 
   .slick-dots li button:before {
     @apply text-sm; /* Make dots smaller */
   }
+}
+
+.pexels-slider__image {
+  @apply w-full h-[300px] object-cover rounded-lg transition-transform duration-300 hover:scale-105;
 }
