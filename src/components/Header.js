@@ -1,21 +1,38 @@
-import "../styles/Header.css"
+import { DevicePhoneMobileIcon, DeviceTabletIcon, ComputerDesktopIcon } from "@heroicons/react/24/outline";
+import "../styles/Header.css";
 
-function Header() {
+function Header({ setAppSize, appSize }) {
     return (
-        <header className="header">
-            <div>
+        <header className={`header ${appSize === "mobile" ? "header--mobile" : ""}`}>
+            <div className="header__content">
                 <h1 className="header__title">Portfolio</h1>
                 <p className="header__subtitle">By: Carlos Palkovic</p>
             </div>
+
             <nav className="header__nav">
                 <ul className="header__menu">
-                    <li className="header__item"><a href="#home" className="header__link">Home</a></li>
-                    <li className="header__item"><a href="#about" className="header__link">About</a></li>
-                    <li className="header__item"><a href="#contact" className="header__link">Contact</a></li>
+                    <li className="header__item">
+                        <button onClick={() => setAppSize("desktop")} className="header__link group relative">
+                            <ComputerDesktopIcon className="header__icon" />
+                            <span className="tooltip">Desktop</span>
+                        </button>
+                    </li>
+                    <li className="header__item">
+                        <button onClick={() => setAppSize("tablet")} className="header__link group relative">
+                            <DeviceTabletIcon className="header__icon" />
+                            <span className="tooltip">Tablet</span>
+                        </button>
+                    </li>
+                    <li className="header__item">
+                        <button onClick={() => setAppSize("mobile")} className="header__link group relative">
+                            <DevicePhoneMobileIcon className="header__icon" />
+                            <span className="tooltip">Mobile</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </header>
-    )
+    );
 }
 
-export { Header }
+export { Header };

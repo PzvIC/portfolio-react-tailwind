@@ -1,56 +1,37 @@
-import React, { useState, useEffect } from "react"
-import { usePexels } from "../hooks/usePexels"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import "../styles/PexelsSlider.css"
-import { SliderModal } from "./SliderModal"
+import React, { useState } from "react";
+import { usePexels } from "../hooks/usePexels";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../styles/PexelsSlider.css";
+import { SliderModal } from "./SliderModal";
 
-const PexelsSlider = () => {
-  const [query, setQuery] = useState("nature")
-  const { data: images, loading, error } = usePexels(query, 20)
-  const [selectedImage, setSelectedImage] = useState(null)
-  const [skeletonCount, setSkeletonCount] = useState(3)
+const PexelsSlider = ({ appSize }) => {
+  const [query, setQuery] = useState("nature");
+  const { data: images, loading, error } = usePexels(query, 20);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  useEffect(() => {
-    const updateSkeletonCount = () => {
-      if (window.innerWidth < 640) {
-        setSkeletonCount(1) // Mobile
-      } else if (window.innerWidth < 1024) {
-        setSkeletonCount(2) // Tablet
-      } else {
-        setSkeletonCount(3) // Desktop
-      }
-    }
-
-    updateSkeletonCount()
-    window.addEventListener("resize", updateSkeletonCount)
-
-    return () => window.removeEventListener("resize", updateSkeletonCount)
-  }, [])
+  // Definir cuántas imágenes mostrar según `screenSize`
+  const slidesToShow = appSize === "mobile" ? 1 : appSize === "tablet" ? 2 : 3;
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 600, settings: { slidesToShow: 1 } }
-    ]
-  }
+  };
 
-  // Skeleton Loader
+  // Skeleton Loader basado en `slidesToShow`
   const renderSkeleton = () => (
     <div className="pexels-slider__skeleton-container">
-      {[...Array(skeletonCount)].map((_, index) => (
+      {[...Array(slidesToShow)].map((_, index) => (
         <div key={index} className="pexels-slider__skeleton"></div>
       ))}
     </div>
-  )
+  );
 
   return (
     <div className="pexels-slider">
@@ -100,7 +81,7 @@ const PexelsSlider = () => {
 
       <SliderModal image={selectedImage} onClose={() => setSelectedImage(null)} />
     </div>
-  )
-}
+  );
+};
 
-export { PexelsSlider }
+export { PexelsSlider };
