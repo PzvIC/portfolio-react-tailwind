@@ -1,15 +1,15 @@
 .app-container {
-  @apply mx-auto transition-all duration-300;
+  @apply mx-auto transition-all duration-300 max-w-full max-h-screen overflow-hidden;
 }
 
 .desktop {
-  @apply w-full h-screen; /* Laptop estándar */
+  @apply w-full h-screen; /* Se ajusta al 100% de la pantalla */
 }
 
 .tablet {
-  @apply w-[768px] h-screen; /* Tablet 10" */
+  @apply w-[768px] max-w-full h-screen max-h-screen; /* Nunca excede la pantalla */
 }
 
 .mobile {
-  @apply w-[375px] h-screen; /* Móvil mediano */
+  @apply w-[375px] max-w-full h-screen max-h-screen; /* Nunca excede la pantalla */
 }
