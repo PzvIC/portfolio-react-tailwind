@@ -38,7 +38,7 @@ function Header({ setAppSize, appSize, setManualOverride }) {
                 </ul>
             </nav>
         </header>
-    );
+    )
 }
 
 export { Header };

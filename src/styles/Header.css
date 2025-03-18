@@ -8,7 +8,6 @@
 
 .header__subtitle {
   @apply text-lg text-gray-500 mt-1;
-  /* Smaller and lighter text with spacing */
 }
 
 .header__nav {
@@ -39,7 +38,6 @@
   @apply absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 transition-opacity duration-200 group-hover:opacity-100;
 }
 
-/* ✅ Estilos para cuando el header está en modo mobile */
 .header--mobile {
   @apply flex flex-col items-center text-center;
 }

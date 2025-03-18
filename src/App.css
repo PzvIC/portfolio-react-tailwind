@@ -13,3 +13,7 @@
 .mobile {
   @apply w-[375px] max-w-full h-screen max-h-screen; /* Nunca excede la pantalla */
 }
+
+.app-fix {
+  
+}
