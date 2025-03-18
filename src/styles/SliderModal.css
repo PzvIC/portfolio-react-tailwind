@@ -1,5 +1,5 @@
 .slider-modal {
-    @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50;
+    @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 mb-10;
   }
   
   .slider-modal__overlay {
@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     max-width: 85vw;
-    max-height: 85vh;
+    max-height: 80vh;
   }
   
   /* Image stays inside the container and maintains aspect ratio */

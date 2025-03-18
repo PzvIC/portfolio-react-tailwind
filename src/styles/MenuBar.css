@@ -1,5 +1,5 @@
 .menu-container {
-    @apply bg-amber-900 p-4 shadow-lg;
+    @apply bg-gray-700 p-4 shadow-lg;
 }
 
 .menu-list {
@@ -7,14 +7,14 @@
 }
 
 .menu-link {
-    @apply flex items-center gap-2 px-4 py-2 rounded-lg text-white font-semibold hover:bg-amber-800 transition duration-300;
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg text-white font-semibold hover:bg-gray-800 transition duration-300;
 }
 
 
 .menu-icon {
-    @apply w-8 h-8 text-white;
+    @apply w-8 h-8 text-green-200;
 }
 
 .menu-text {
-    @apply text-white hidden md:inline;
+    @apply text-green-200 hidden md:inline;
 }

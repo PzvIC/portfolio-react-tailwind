@@ -1,5 +1,5 @@
 .pexels-slider {
-  @apply text-center p-5 mt-20;
+  @apply text-center p-5 mt-6 mb-20;
 }
 
 .pexels-slider__title {
