@@ -24,7 +24,7 @@ function App() {
   return (
       <div className={`app-container ${appSize}`}>
           <MenuBar appSize={appSize} />
-          
+
           <Header 
             setAppSize={setAppSize} 
             appSize={appSize} 
@@ -40,7 +40,9 @@ function App() {
               </Routes>
           </main>
 
-          <Footer />
+          <Footer 
+            appSize={appSize}
+          />
       </div>
   );
 }
