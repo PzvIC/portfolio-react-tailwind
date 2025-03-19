@@ -38,63 +38,75 @@
   @apply p-2;
 }
 
+.pexels-slider__image-container {
+  @apply relative;
+}
+
 .pexels-slider__image {
-  @apply w-full h-[300px] object-cover rounded-lg;
+  @apply w-full h-[300px] object-cover rounded-lg transition-transform duration-300 hover:scale-105;
 }
 
 .pexels-slider__skeleton-container {
   @apply flex justify-center gap-4 mt-4;
 }
 
-/* Skeletons match the slider image size */
 .pexels-slider__skeleton {
   @apply bg-gray-300 animate-pulse rounded-lg;
   width: 100%;
-  height: 300px; /* Same height as slider images */
+  height: 300px;
   max-width: 500px;
 }
 
-/* Tablet: 2 skeletons */
 @media (max-width: 1024px) {
   .pexels-slider__skeleton {
     max-width: 610px;
   }
 }
 
-/* Mobile: 1 skeleton */
 @media (max-width: 640px) {
   .pexels-slider__skeleton {
     max-width: 639px;
   }
 }
 
-/* --- FIX FOR PAGINATION DOTS (Slick Dots) --- */
 .slick-dots {
   @apply flex justify-center mt-8 relative;
 }
 
-/* Default dot size */
 .slick-dots li button:before {
   @apply text-gray-500 text-lg;
 }
 
-/* Active dot */
 .slick-dots li.slick-active button:before {
   @apply text-blue-600;
 }
 
-/* Move dots down ONLY on mobile */
 @media (max-width: 640px) {
   .slick-dots {
     @apply mt-12;
-    bottom: -50px !important; /* Ensure dots move lower on mobile */
+    bottom: -50px !important;
   }
 
   .slick-dots li button:before {
-    @apply text-sm; /* Make dots smaller */
+    @apply text-sm;
   }
 }
 
-.pexels-slider__image {
-  @apply w-full h-[300px] object-cover rounded-lg transition-transform duration-300 hover:scale-105;
+.pexels-slider__favorite-button {
+  @apply absolute top-2 right-2 p-2 rounded-full transition text-white/55;
+}
+
+
+.pexels-slider__favorite-button:hover,
+.pexels-slider__favorite-active {
+  @apply text-red-600;
+}
+
+.pexels-slider__image-container:hover .pexels-slider__image,
+.pexels-slider__favorite-button:hover ~ .pexels-slider__image {
+  @apply scale-105;
+}
+
+.pexels-slider__heart-icon {
+  @apply w-10 h-10;
 }
