@@ -1,36 +1,75 @@
 .slider-modal {
-    @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 mb-10;
-  }
-  
-  .slider-modal__overlay {
-    @apply absolute inset-0;
-  }
-  
-  .slider-modal__content {
-    @apply relative bg-white p-3 pt-8 rounded-lg shadow-lg flex flex-col items-center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 85vw;
-    max-height: 80vh;
-  }
-  
-  /* Image stays inside the container and maintains aspect ratio */
-  .slider-modal__image {
-    @apply object-contain rounded-lg;
-    width: 90%;
-    height: auto;
-    max-width: 80vw;
-    max-height: 80vh;
-  }
-  
-  /* Close button */
-  .slider-modal__close {
-    @apply absolute -top-3 right-1 font-bold text-5xl text-gray-600 hover:text-gray-900 cursor-pointer;
-  }
-  
-  /* Caption text */
-  .slider-modal__text {
-    @apply text-gray-700 text-center mt-2;
-  }
-  
+  @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50;
+}
+
+.slider-modal__overlay {
+  @apply absolute inset-0;
+}
+
+.slider-modal__content {
+  @apply relative bg-white p-2 pt-6 rounded-lg shadow-lg flex flex-col items-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 85vw;
+  max-height: 80vh;
+}
+
+/* Imagen dentro del modal */
+.slider-modal__image {
+  @apply object-contain rounded-lg;
+  width: 90%;
+  height: auto;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+/* Botón de cerrar (X) - Más grande y bien centrado */
+.slider-modal__close {
+  @apply absolute left-1/2 -top-20 flex items-center justify-center w-16 h-16 rounded-full bg-black/70 text-white cursor-pointer transition;
+  transform: translateX(-50%);
+}
+
+.slider-modal__close:hover {
+  @apply bg-black/90;
+}
+
+/* Icono de la "X" - Ahora gira 360° en hover */
+.slider-modal__close-icon {
+  @apply w-10 h-10 text-white transition-transform duration-300;
+}
+
+.slider-modal__close:hover .slider-modal__close-icon {
+  @apply rotate-[360deg];
+}
+
+/* Texto del fotógrafo */
+.slider-modal__text {
+  @apply text-gray-700 text-center mt-2 mb-2;
+}
+
+/* Botón de favorito - Más grande y bien centrado */
+.slider-modal__favorite-button {
+  @apply absolute left-1/2 -bottom-20 flex items-center justify-center w-16 h-16 rounded-full bg-black/70 transition;
+  transform: translateX(-50%);
+}
+
+/* Efecto hover en el botón de favoritos */
+.slider-modal__favorite-button:hover,
+.slider-modal__favorite-active {
+  @apply bg-black/90;
+}
+
+/* Icono del corazón - Se vuelve rojo cuando está activo */
+.slider-modal__heart-icon {
+  @apply w-10 h-10 text-white transition-transform duration-300;
+}
+
+.slider-modal__favorite-active .slider-modal__heart-icon {
+  @apply text-red-600;
+}
+
+/* Efecto de crecimiento en hover */
+.slider-modal__favorite-button:hover .slider-modal__heart-icon {
+  @apply scale-[1.2];
+}

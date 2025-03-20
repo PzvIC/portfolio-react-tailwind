@@ -12,7 +12,7 @@ const PexelsSlider = ({ appSize }) => {
   const [query, setQuery] = useState("nature");
   const { data: images, loading, error } = usePexels(query, 20);
   const [selectedImage, setSelectedImage] = useState(null);
-  const { favorites, toggleFavorite } = useFavorites(); // Usamos el hook
+  const { favorites, toggleFavorite } = useFavorites();
 
   const slidesToShow = appSize === "mobile" ? 1 : appSize === "tablet" ? 2 : 3;
 
@@ -70,29 +70,32 @@ const PexelsSlider = ({ appSize }) => {
 
       {!loading && !error && images.length > 0 && (
         <Slider {...settings} className="pexels-slider__carousel">
-          {images.map((img) => (
-            <div key={img.id} className="pexels-slider__slide">
-              <div className="pexels-slider__image-container">
-                <img
-                  src={img.src.large}
-                  alt={img.photographer}
-                  className="pexels-slider__image"
-                  onClick={() => setSelectedImage(img)}
-                />
-                <button
-                  className={`pexels-slider__favorite-button ${
-                    favorites.some((fav) => fav.id === img.id) ? "pexels-slider__favorite-active" : ""
-                  }`}
-                  onClick={() => toggleFavorite(img)}
-                >
-                  <HeartIcon className="pexels-slider__heart-icon" />
-                </button>
+          {images.map((img) => {
+            const isFavorite = favorites.some((fav) => fav.id === img.id);
+
+            return (
+              <div key={img.id} className="pexels-slider__slide">
+                <div className="pexels-slider__image-container">
+                  <img
+                    src={img.src.large}
+                    alt={img.photographer}
+                    className="pexels-slider__image"
+                    onClick={() => setSelectedImage(img)}
+                  />
+                  <button
+                    className={`pexels-slider__favorite-button ${isFavorite ? "pexels-slider__favorite-active" : ""}`}
+                    onClick={() => toggleFavorite(img)}
+                  >
+                    <HeartIcon className={`pexels-slider__heart-icon ${isFavorite ? "text-red-600" : "text-white/55"}`} />
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </Slider>
       )}
 
+      {/* Modal sincronizado con favoritos */}
       <SliderModal image={selectedImage} onClose={() => setSelectedImage(null)} />
     </div>
   );
