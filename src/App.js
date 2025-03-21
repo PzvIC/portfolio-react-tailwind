@@ -1,9 +1,9 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { MenuBar } from "./components/MenuBar";
-import { About } from "./pages/About";
+import { Favorites } from "./pages/Favorites";
 import { Contact } from "./pages/Contact";
-import { FAQ } from "./pages/FAQ";
+import { About } from "./pages/About";
 import { useAppSize } from './hooks/useAppSize';
 import { PexelsSlider } from './components/PexelsSlider';
 import { Header } from './components/Header';
@@ -34,9 +34,9 @@ function App() {
           <main className="app-fix">
               <Routes>
                   <Route path="/" element={<Home appSize={appSize} />} />
-                  <Route path="/about" element={<About />} />
+                  <Route path="/favorites" element={<Favorites appSize={appSize} />} />
                   <Route path="/contact" element={<Contact />} />
-                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/about" element={<About />} />
               </Routes>
           </main>
 

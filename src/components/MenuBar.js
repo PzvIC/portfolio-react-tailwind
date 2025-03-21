@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-import { HomeIcon, InformationCircleIcon, PhoneIcon, QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+import {
+    HomeIcon,
+    HeartIcon,
+    PhoneIcon,
+    InformationCircleIcon
+} from "@heroicons/react/24/solid";
 import "../styles/MenuBar.css";
 
 function MenuBar({ appSize }) {
@@ -13,9 +18,9 @@ function MenuBar({ appSize }) {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/about" className="menu-link">
-                        <InformationCircleIcon className="menu-icon" />
-                        {appSize !== "mobile" && <span className="menu-text">About</span>}
+                    <Link to="/favorites" className="menu-link">
+                        <HeartIcon className="menu-icon" />
+                        {appSize !== "mobile" && <span className="menu-text">Favorites</span>}
                     </Link>
                 </li>
                 <li>
@@ -25,9 +30,9 @@ function MenuBar({ appSize }) {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/faq" className="menu-link">
-                        <QuestionMarkCircleIcon className="menu-icon" />
-                        {appSize !== "mobile" && <span className="menu-text">FAQ</span>}
+                    <Link to="/about" className="menu-link">
+                        <InformationCircleIcon className="menu-icon" />
+                        {appSize !== "mobile" && <span className="menu-text">About</span>}
                     </Link>
                 </li>
             </ul>
@@ -35,4 +40,4 @@ function MenuBar({ appSize }) {
     );
 }
 
-export {MenuBar} ;
+export { MenuBar };
