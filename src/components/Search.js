@@ -12,13 +12,13 @@ function Search({ appSize }) {
     );
 
     const getImageSrc = (photo) => {
-        if (appSize === "mobile") return photo.src.small;
-        if (appSize === "tablet") return photo.src.medium;
-        return photo.src.original;
+        if (appSize === "mobile") return photo.src.medium;
+        if (appSize === "tablet") return photo.src.large;
+        return photo.src.large;
     };
 
     return (
-        <div className="search-container">
+        <div className={`search-container search-container__${appSize}`}>
             <input
                 type="text"
                 placeholder="Search by description or photographer..."
@@ -27,7 +27,7 @@ function Search({ appSize }) {
                 className="search-input"
             />
 
-            <div className="photo-grid">
+            <div className={`photo-grid-${appSize}`}>
                 {filteredFavorites.length > 0 ? (
                     filteredFavorites.map((photo) => (
                         <div key={photo.id} className="photo-card">
@@ -36,12 +36,17 @@ function Search({ appSize }) {
                                 alt={photo.alt}
                                 className="photo-image"
                             />
-                            <div className="photo-title">{photo.alt}</div>
-                            <div className="photo-photographer">by {photo.photographer}</div>
+                            <div className={`photo-text-container photo-text-container__${appSize}`}>
+                                {appSize !== "mobile" && (
+                                    <p className="photo-title">{photo.alt}</p>
+                                )}
+
+                                <p className="photo-photographer">{photo.photographer}</p>
+                            </div>
                         </div>
                     ))
                 ) : (
-                    <p className="no-results">No matching photos found.</p>
+                    <p className="no-results">No favorites yet.</p>
                 )}
             </div>
         </div>
