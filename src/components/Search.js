@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useFavorites } from "../hooks/useFavorites";
+import { SliderModal } from "./SliderModal"; // 👈 Asegúrate de importar el modal
 import "../styles/Search.css";
 
 function Search({ appSize }) {
     const { favorites } = useFavorites();
     const [query, setQuery] = useState("");
+    const [selectedImage, setSelectedImage] = useState(null); // 👈 Nuevo estado
 
     const filteredFavorites = favorites.filter(photo =>
         photo.alt?.toLowerCase().includes(query.toLowerCase()) ||
@@ -30,7 +32,11 @@ function Search({ appSize }) {
             <div className={`photo-grid-${appSize}`}>
                 {filteredFavorites.length > 0 ? (
                     filteredFavorites.map((photo) => (
-                        <div key={photo.id} className="photo-card">
+                        <div
+                            key={photo.id}
+                            className="photo-card"
+                            onClick={() => setSelectedImage(photo)} // 👈 Abre el modal
+                        >
                             <img
                                 src={getImageSrc(photo)}
                                 alt={photo.alt}
@@ -40,7 +46,6 @@ function Search({ appSize }) {
                                 {appSize !== "mobile" && (
                                     <p className="photo-title">{photo.alt}</p>
                                 )}
-
                                 <p className="photo-photographer">{photo.photographer}</p>
                             </div>
                         </div>
@@ -49,9 +54,16 @@ function Search({ appSize }) {
                     <p className="no-results">No favorites yet.</p>
                 )}
             </div>
+
+            {selectedImage && (
+                <SliderModal
+                    image={selectedImage}
+                    appSize={appSize}
+                    onClose={() => setSelectedImage(null)}
+                />
+            )}
         </div>
     );
 }
-
 
 export { Search };

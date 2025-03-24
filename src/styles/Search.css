@@ -10,7 +10,6 @@
     @apply w-full p-3 rounded-xl border border-gray-300 shadow-sm mb-8 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-300 transition mx-auto
   }
   
-  
   .photo-grid-desktop {
     @apply grid grid-cols-2 gap-6 px-4
   }
@@ -24,7 +23,7 @@
   }
   
   .photo-card {
-    @apply rounded-xl bg-white p-6 shadow-xl w-full h-full
+    @apply rounded-xl bg-white p-6 shadow-md w-full h-full transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:cursor-pointer;
   }
   
   .photo-image {

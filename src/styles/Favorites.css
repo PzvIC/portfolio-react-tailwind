@@ -1,4 +1,33 @@
 .favorites-page {
-    @apply w-full;
-  }
-  
+  @apply w-full pb-20;
+}
+
+.to-top-button {
+  @apply fixed bg-green-400 hover:bg-green-500 text-white p-6 rounded-full shadow-lg z-50 transition-all duration-300 ease-in-out;
+  top: auto;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(0);
+}
+
+.to-top-button__mobile {
+  bottom: 6rem;
+  transform: translateX(160px);
+}
+
+
+.to-top-button__tablet {
+  transform: translateX(300px);
+  bottom: 16rem; 
+}
+
+.to-top-button__desktop {
+  right: 3rem;
+  left: auto;
+  bottom: 8rem;
+  transform: none;
+}
+
+.to-top-icon {
+  @apply h-8 w-8 text-gray-700
+}
