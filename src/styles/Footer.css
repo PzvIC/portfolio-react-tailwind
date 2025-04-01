@@ -1,5 +1,5 @@
 .footer {
-    @apply mt-10 bg-gray-900 shadow-md rounded-lg w-full text-lg gap-4 flex justify-between items-center py-6;
+    @apply mt-10 bg-gray-900 dark:bg-gray-800 shadow-md rounded-lg w-full text-lg gap-4 flex justify-between items-center py-6;
     box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.2), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
     margin-bottom: -5px;
 }

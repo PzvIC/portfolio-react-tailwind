@@ -10,7 +10,6 @@ function Favorites({ appSize }) {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
-            // Muestra el botón si el scroll supera, por ejemplo, 150px
             setShowScrollTop(scrollTop > 150);
         };
 
