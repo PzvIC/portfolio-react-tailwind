@@ -1,0 +1,31 @@
+.about-section {
+    @apply max-w-4xl mx-auto px-4 py-16 text-gray-700 dark:text-green-200 space-y-6 animate-fade-in;
+  }
+  
+  .about-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4;
+  }
+  
+  .about-divider {
+    @apply w-24 h-1 bg-green-500 dark:bg-green-300 mx-auto mb-8 rounded;
+  }
+  
+  .about-list {
+    @apply list-disc list-inside space-y-2;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
+  }
+  
