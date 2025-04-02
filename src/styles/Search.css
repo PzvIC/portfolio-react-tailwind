@@ -1,52 +1,95 @@
-.search-container{
-    @apply mt-5 px-4 py-6 mx-auto
+.search-container {
+  @apply mt-5 px-4 py-6 mx-auto;
 }
 
 .search-container__desktop {
-    @apply max-w-[80%]
-  }
+  @apply max-w-[80%];
+}
 
-  .search-input {
-    @apply w-full p-3 rounded-xl border border-gray-300 shadow-sm mb-8 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-300 transition mx-auto bg-green-300 dark:bg-gray-800 text-gray-900 dark:text-green-200 placeholder-green-600 dark:placeholder-gray-600
-  }
-  
-  .no-results{
-    @apply text-gray-900 dark:text-green-200
-  }
+.search-input {
+  @apply w-full p-3 rounded-xl border border-gray-300 shadow-sm mb-8 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-300 transition mx-auto bg-green-300 dark:bg-gray-800 text-gray-900 dark:text-green-200 placeholder-green-600 dark:placeholder-gray-600;
+}
 
-  .photo-grid-desktop {
-    @apply grid grid-cols-2 gap-6 px-4
-  }
-  
-  .photo-grid-mobile {
-    @apply grid grid-cols-1 gap-4 px-4
-  }
-  
-  .photo-grid-tablet {
-    @apply grid grid-cols-1 gap-6 px-4
-  }
-  
-  .photo-card {
-    @apply rounded-xl bg-white dark:bg-gray-800 p-6 shadow-md w-full h-full transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:cursor-pointer;
-  }
-  
-  .photo-image {
-    @apply w-full aspect-[4/3] object-cover rounded-xl shadow-md
-  }
-  
-  .photo-text-container {
-    @apply mt-6 p-4 rounded-xl bg-green-200 shadow-md text-gray-700 font-semibold w-fit mx-auto
-  }
+.no-results {
+  @apply text-gray-900 dark:text-green-200;
+}
 
-  .photo-text-container__mobile{
-    @apply p-2 rounded-xl bg-green-200 shadow-md text-gray-700 font-semibold w-full
-  }
-  
-  .photo-title {
-    @apply px-4 py-1 pb-4 rounded-xl inline-block text-lg capitalize
-  }
-  
-  .photo-photographer {
-    @apply text-center uppercase font-bold
-  }
-  
+.photo-grid__desktop {
+  @apply grid grid-cols-2 gap-6 px-4;
+}
+
+.photo-grid__center-single {
+  @apply grid-cols-1 place-items-center;
+}
+
+.photo-grid__mobile {
+  @apply grid grid-cols-1 gap-4 px-4;
+}
+
+.photo-grid__tablet {
+  @apply grid grid-cols-1 gap-6 px-4;
+}
+
+.photo-card {
+  @apply relative pt-10 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-md w-full h-full max-w-[50rem] transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:cursor-pointer;
+}
+
+
+.photo-image {
+  @apply w-full aspect-[4/3] object-cover rounded-xl shadow-md;
+}
+
+.photo-text-container {
+  @apply mt-6 p-4 rounded-xl bg-green-200 shadow-md text-gray-700 font-semibold w-fit mx-auto;
+}
+
+.photo-text-container__mobile {
+  @apply p-2 rounded-xl bg-green-200 shadow-md text-gray-700 font-semibold w-full;
+}
+
+.photo-title {
+  @apply px-4 py-1 pb-4 rounded-xl inline-block text-lg capitalize;
+}
+
+.photo-photographer {
+  @apply text-center uppercase font-bold;
+}
+
+.remove-button {
+  @apply absolute top-1 right-1 bg-black/60 text-white rounded-full p-1 hover:bg-black/80 transition z-10 flex items-center justify-center;
+}
+
+
+.remove-icon {
+  @apply w-6 h-6 text-green-400;
+}
+
+.confirm-modal-overlay {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+}
+
+.confirm-modal {
+  @apply bg-green-100 dark:bg-gray-800 p-6 py-12 rounded-xl shadow-xl max-w-md w-full text-center;
+}
+
+.confirm-modal-text {
+  @apply text-lg font-semibold text-gray-900 dark:text-green-200 mb-4;
+}
+
+.confirm-modal-buttons {
+  @apply flex justify-center gap-4 text-white;
+}
+
+.confirm-cancel,
+.confirm-remove {
+  @apply px-4 py-2 w-28 text-center rounded transition;
+}
+
+.confirm-cancel {
+  @apply bg-green-400 dark:bg-gray-500 hover:bg-green-500 dark:hover:bg-gray-600;
+}
+
+.confirm-remove {
+  @apply bg-red-600  hover:bg-red-700;
+}
+

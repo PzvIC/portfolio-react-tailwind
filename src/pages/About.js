@@ -29,6 +29,10 @@ function About() {
       <ul className="about-list">
         <li>A search input to filter images by description or photographer name.</li>
         <li>A scroll-to-top button to quickly return to the top of the page — enhancing usability when many images are stored.</li>
+        <li>
+          A dedicated <strong>remove button</strong> on each photo, allowing users to manage their selection.
+          To prevent accidental removal, this action is protected by a <strong>custom confirmation modal</strong> designed with accessibility and responsive design in mind.
+        </li>
       </ul>
       <p>
         Additionally, the site includes the implementation of <strong>loading skeletons</strong> that simulate content placeholders while fetching data. An intentional 1-second artificial delay was added when calling the API to let users appreciate the visual feedback and smoother transition.
