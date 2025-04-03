@@ -34,7 +34,7 @@ const usePexels = (query, perPage = 20) => {
     };
 
     fetchImages();
-  }, [query, perPage, API_KEY]);
+  }, [query, perPage]);
 
   return { data, loading, error };
 };
