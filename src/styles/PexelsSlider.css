@@ -1,5 +1,5 @@
 .pexels-slider {
-  @apply bg-gray-50 dark:bg-gray-900 text-center p-5 mt-6 mb-5;
+  @apply bg-gray-50 dark:bg-gray-900 text-center p-5 mt-6 mb-5 animate-fade-in;
 }
 
 .pexels-slider__title {
@@ -230,5 +230,20 @@
 
 .pexels-arrow__icon {
   @apply w-10 h-10;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
 }
 
