@@ -14,10 +14,11 @@ const useFavorites = (key = "favorites") => {
       const storedFavorites = JSON.parse(localStorage.getItem(key)) || [];
       setFavorites(storedFavorites);
     };
-
+  
     window.addEventListener("storage", syncFavorites);
     return () => window.removeEventListener("storage", syncFavorites);
-  }, []);
+  }, [key]);
+  
 
   const toggleFavorite = (item) => {
     let updatedFavorites;
