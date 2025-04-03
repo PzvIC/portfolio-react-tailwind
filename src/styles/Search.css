@@ -1,5 +1,5 @@
 .search-container {
-  @apply mt-5 px-4 py-6 mx-auto animate-fade-in;
+  @apply mt-5 px-4 py-6 mx-auto ;
 }
 
 .search-container__desktop {
@@ -7,11 +7,15 @@
 }
 
 .search-input {
-  @apply w-full p-3 rounded-xl border border-gray-300 shadow-sm mb-8 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-300 transition mx-auto bg-green-300 dark:bg-gray-800 text-gray-900 dark:text-green-200 placeholder-green-600 dark:placeholder-gray-600;
+  @apply w-full p-3 rounded-xl border border-gray-300 shadow-sm mb-8 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-300 transition mx-auto bg-green-300 dark:bg-gray-800 text-gray-900 dark:text-green-200 placeholder-green-600 dark:placeholder-gray-600 animate-fade-in;
 }
 
 .no-results {
   @apply text-gray-900 dark:text-green-200;
+}
+
+.photo-grid{
+  @apply animate-fade-in
 }
 
 .photo-grid__desktop {
