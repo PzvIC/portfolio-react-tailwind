@@ -1,4 +1,4 @@
-import "../styles/Body.css";
+import "../styles/Body.css"
 
 function Body({ children }) {
     return (

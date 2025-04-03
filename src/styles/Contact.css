@@ -45,7 +45,6 @@
     transform-origin: center;
   }
   
-  
   .group:hover .tooltip {
     @apply opacity-100 scale-100;
   }

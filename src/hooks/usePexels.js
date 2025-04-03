@@ -11,7 +11,7 @@ const usePexels = (query, perPage = 20) => {
   useEffect(() => {
     if (!query) return
 
-    setLoading(true) // Keep loading true during delay
+    setLoading(true)
 
     const fetchImages = async () => {
       setError(null)
@@ -29,9 +29,9 @@ const usePexels = (query, perPage = 20) => {
         } catch (err) {
           setError(err.message)
         } finally {
-          setLoading(false) // Only stop loading after data is fetched
+          setLoading(false)
         }
-      }, 1000) // 1-second delay before making the API call
+      }, 1000)
     }
 
     fetchImages()
