@@ -1,43 +1,42 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-const API_KEY = process.env.REACT_APP_API_KEY
-const BASE_URL = "https://api.pexels.com/v1/"
+const API_KEY = process.env.REACT_APP_API_KEY;
+const BASE_URL = "https://api.pexels.com/v1/";
 
 const usePexels = (query, perPage = 20) => {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!query) return
+    if (!query) return;
 
-    setLoading(true)
+    setLoading(true);
+    setError(null);
 
     const fetchImages = async () => {
-      setError(null)
-
       setTimeout(async () => {
         try {
           const response = await fetch(`${BASE_URL}search?query=${query}&per_page=${perPage}`, {
             headers: { Authorization: API_KEY },
-          })
+          });
 
-          if (!response.ok) throw new Error(`Error: ${response.status}`)
+          if (!response.ok) throw new Error(`Error: ${response.status}`);
 
-          const result = await response.json()
-          setData(result.photos)
+          const result = await response.json();
+          setData(result.photos);
         } catch (err) {
-          setError(err.message)
+          setError(err.message);
         } finally {
-          setLoading(false)
+          setLoading(false);
         }
-      }, 1000)
-    }
+      }, 1000);
+    };
 
-    fetchImages()
-  }, [query])
+    fetchImages();
+  }, [query, perPage, API_KEY]);
 
-  return { data, loading, error }
-}
+  return { data, loading, error };
+};
 
-export { usePexels }
+export { usePexels };

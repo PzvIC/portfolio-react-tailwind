@@ -6,7 +6,8 @@ const useFavorites = (key = "favorites") => {
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem(key)) || [];
     setFavorites(storedFavorites);
-  }, []);
+  }, [key]);
+  
 
   useEffect(() => {
     const syncFavorites = () => {

@@ -22,62 +22,63 @@ function Search({ appSize }) {
     };
 
     return (
-        <div className={`search-container search-container__${appSize}`}>
-            <input
-                type="text"
-                placeholder="Search by description or photographer..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className="search-input"
-            />
+        <div>
+            <div className={`search-container search-container__${appSize}`}>
+                <input
+                    type="text"
+                    placeholder="Search by description or photographer..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className="search-input"
+                />
 
-            <div className={`photo-grid photo-grid__${appSize} ${(["desktop", "tablet"].includes(appSize) && filteredFavorites.length === 1) ? "photo-grid__center-single" : ""}`}>
+                <div className={`photo-grid photo-grid__${appSize} ${(["desktop", "tablet"].includes(appSize) && filteredFavorites.length === 1) ? "photo-grid__center-single" : ""}`}>
 
 
-                {filteredFavorites.length > 0 ? (
-                    filteredFavorites.map((photo) => (
-                        <div key={photo.id} className="photo-card">
-                            <button
-                                className="remove-button"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setPhotoToRemove(photo);
-                                }}
-                                title="Remove from favorites"
-                            >
-                                <XMarkIcon className="remove-icon" />
-                            </button>
+                    {filteredFavorites.length > 0 ? (
+                        filteredFavorites.map((photo) => (
+                            <div key={photo.id} className="photo-card">
+                                <button
+                                    className="remove-button"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setPhotoToRemove(photo);
+                                    }}
+                                    title="Remove from favorites"
+                                >
+                                    <XMarkIcon className="remove-icon" />
+                                </button>
 
-                            <img
-                                src={getImageSrc(photo)}
-                                alt={photo.alt}
-                                className="photo-image"
-                                onClick={() => setSelectedImage(photo)}
-                            />
+                                <img
+                                    src={getImageSrc(photo)}
+                                    alt={photo.alt}
+                                    className="photo-image"
+                                    onClick={() => setSelectedImage(photo)}
+                                />
 
-                            <div className={`photo-text-container photo-text-container__${appSize}`}>
-                                {appSize !== "mobile" && (
-                                    <p className="photo-title">{photo.alt}</p>
-                                )}
-                                <p className="photo-photographer">{photo.photographer}</p>
+                                <div className={`photo-text-container photo-text-container__${appSize}`}>
+                                    {appSize !== "mobile" && (
+                                        <p className="photo-title">{photo.alt}</p>
+                                    )}
+                                    <p className="photo-photographer">{photo.photographer}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))
-                ) : favorites.length > 0 ? (
-                    <p className="no-results">No Matches.</p>
-                ) : (
-                    <p className="no-results">No favorites yet.</p>
+                        ))
+                    ) : favorites.length > 0 ? (
+                        <p className="no-results">No Matches.</p>
+                    ) : (
+                        <p className="no-results">No favorites yet.</p>
+                    )}
+                </div>
+
+                {selectedImage && (
+                    <SliderModal
+                        image={selectedImage}
+                        appSize={appSize}
+                        onClose={() => setSelectedImage(null)}
+                    />
                 )}
             </div>
-
-            {selectedImage && (
-                <SliderModal
-                    image={selectedImage}
-                    appSize={appSize}
-                    onClose={() => setSelectedImage(null)}
-                />
-            )}
-
             {photoToRemove && (
                 <div className="confirm-modal-overlay">
                     <div className="confirm-modal">

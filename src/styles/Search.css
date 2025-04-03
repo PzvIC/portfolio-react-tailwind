@@ -1,5 +1,5 @@
 .search-container {
-  @apply mt-5 px-4 py-6 mx-auto;
+  @apply mt-5 px-4 py-6 mx-auto animate-fade-in;
 }
 
 .search-container__desktop {
@@ -92,4 +92,21 @@
 .confirm-remove {
   @apply bg-red-600  hover:bg-red-700;
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+
 

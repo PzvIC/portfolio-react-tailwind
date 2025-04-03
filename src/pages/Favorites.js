@@ -22,9 +22,10 @@ function Favorites({ appSize }) {
     };
 
     return (
-        <div className="favorites-page relative">
-            <Search appSize={appSize} />
-
+        <div>
+            <div className="favorites-page relative">
+                <Search appSize={appSize} />
+            </div>
             {showScrollTop && (
                 <button
                     onClick={scrollToTop}
