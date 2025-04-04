@@ -1,33 +1,35 @@
 .footer {
-    @apply mt-10 bg-gray-900 dark:bg-gray-800 shadow-md rounded-lg w-full text-lg gap-4 flex justify-between items-center py-6;
-    box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.2), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
-    margin-bottom: -5px;
+  @apply mt-10 bg-gray-900 dark:bg-gray-800 shadow-md rounded-lg w-full text-lg gap-4 flex justify-between items-center py-6;
+  box-shadow:
+    0 -10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 -4px 6px -4px rgba(0, 0, 0, 0.1);
+  margin-bottom: -5px;
 }
 
-.footer__mobile{
-    @apply justify-center;
+.footer__mobile {
+  @apply justify-center;
 }
 
 .footer-title {
-    @apply flex justify-center items-center text-green-200 text-5xl font-bold px-10 py-8;
+  @apply flex justify-center items-center text-green-200 text-5xl font-bold px-10 py-8;
 }
 
 .footer-list {
-    @apply flex text-green-200 font-semibold;
+  @apply flex text-green-200 font-semibold;
 }
 
 .footer-list__desktop {
-    @apply flex justify-center items-center gap-10 px-14;
+  @apply flex justify-center items-center gap-10 px-14;
 }
 
 .footer-list__tablet {
-    @apply flex flex-col justify-between gap-6 py-6 px-14;
+  @apply flex flex-col justify-between gap-6 py-6 px-14;
 }
 
 .footer-list__mobile {
-    @apply flex flex-row gap-7 px-10 py-6;
+  @apply flex flex-row gap-7 px-10 py-6;
 }
 
 .footer-link {
-    @apply hover:opacity-60 transition;
+  @apply hover:opacity-60 transition;
 }

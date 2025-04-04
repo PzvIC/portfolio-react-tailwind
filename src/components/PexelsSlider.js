@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { usePexels } from "../hooks/usePexels";
-import { useFavorites } from "../hooks/useFavorites";
-import Slider from "react-slick";
-import { HeartIcon } from "@heroicons/react/24/solid";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../styles/PexelsSlider.css";
-import { SliderModal } from "./SliderModal";
-import { Listbox } from "@headlessui/react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import React, { useState } from 'react';
+import { usePexels } from '../hooks/usePexels';
+import { useFavorites } from '../hooks/useFavorites';
+import Slider from 'react-slick';
+import { HeartIcon } from '@heroicons/react/24/solid';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../styles/PexelsSlider.css';
+import { SliderModal } from './SliderModal';
+import { Listbox } from '@headlessui/react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
-const topics = ["nature", "technology", "animals", "space", "cars", "food"];
+const topics = ['nature', 'technology', 'animals', 'space', 'cars', 'food'];
 
 const CustomPrevArrow = ({ appSize, style, onClick }) => (
   <button
@@ -45,14 +45,13 @@ const CustomNextArrow = ({ appSize, style, onClick }) => (
   </button>
 );
 
-
 const PexelsSlider = ({ appSize }) => {
-  const [query, setQuery] = useState("nature");
+  const [query, setQuery] = useState('nature');
   const { data: images, loading, error } = usePexels(query, 20);
   const [selectedImage, setSelectedImage] = useState(null);
   const { favorites, toggleFavorite } = useFavorites();
 
-  const slidesToShow = appSize === "mobile" ? 1 : appSize === "tablet" ? 2 : 3;
+  const slidesToShow = appSize === 'mobile' ? 1 : appSize === 'tablet' ? 2 : 3;
 
   const settings = {
     dots: true,
@@ -70,7 +69,7 @@ const PexelsSlider = ({ appSize }) => {
     <div>
       <div className="pexels-slider">
         <p className="pexels-slider__info">
-          The images come from the API of {" "}
+          The images come from the API of{' '}
           <a
             href="https://www.pexels.com"
             target="_blank"
@@ -86,53 +85,45 @@ const PexelsSlider = ({ appSize }) => {
             <div className="pexels-select__wrapper">
               <Listbox.Button
                 className={`
-              pexels-select__button
-              ${appSize === "mobile" ? "pexels-select--sm pexels-select--full" : ""}
-              ${appSize === "tablet" ? "pexels-select--md pexels-select--medium" : ""}
-              ${appSize === "desktop" ? "pexels-select--lg pexels-select--centered" : ""}
-            `}
+                  pexels-select__button
+                  ${appSize === 'mobile' ? 'pexels-select--sm pexels-select--full' : ''}
+                  ${appSize === 'tablet' ? 'pexels-select--md pexels-select--medium' : ''}
+                  ${appSize === 'desktop' ? 'pexels-select--lg pexels-select--centered' : ''}
+                `}
               >
                 <span className="pexels-select__text">{query}</span>
                 <span className="pexels-select__icon-wrapper">
-                  <ChevronUpDownIcon
-                    className="pexels-select__icon"
-                    aria-hidden="true"
-                  />
+                  <ChevronUpDownIcon className="pexels-select__icon" aria-hidden="true" />
                 </span>
               </Listbox.Button>
               <Listbox.Options
                 className={`
-                pexels-select__options
-                ${appSize === "mobile" ? "pexels-select--full" : ""}
-                ${appSize === "tablet" ? "pexels-select--medium pexels-select--centered-position" : ""}
-                ${appSize === "desktop" ? "pexels-select--centered pexels-select--centered-position" : ""}
-              `}
+                  pexels-select__options
+                  ${appSize === 'mobile' ? 'pexels-select--full' : ''}
+                  ${appSize === 'tablet' ? 'pexels-select--medium pexels-select--centered-position' : ''}
+                  ${appSize === 'desktop' ? 'pexels-select--centered pexels-select--centered-position' : ''}
+                `}
               >
-
-
                 {topics.map((topic) => (
                   <Listbox.Option
                     key={topic}
                     value={topic}
                     className={({ active }) =>
-                      `pexels-select__option ${active ? "pexels-select__option--active" : ""
-                      }`
+                      `pexels-select__option ${active ? 'pexels-select__option--active' : ''}`
                     }
                   >
                     {({ selected }) => (
                       <>
                         <span
-                          className={`pexels-select__option-text ${selected ? "pexels-select__option-text--selected" : ""
-                            }`}
+                          className={`pexels-select__option-text ${
+                            selected ? 'pexels-select__option-text--selected' : ''
+                          }`}
                         >
                           {topic}
                         </span>
                         {selected && (
                           <span className="pexels-select__check">
-                            <CheckIcon
-                              className="pexels-select__check-icon"
-                              aria-hidden="true"
-                            />
+                            <CheckIcon className="pexels-select__check-icon" aria-hidden="true" />
                           </span>
                         )}
                       </>
@@ -140,7 +131,6 @@ const PexelsSlider = ({ appSize }) => {
                   </Listbox.Option>
                 ))}
               </Listbox.Options>
-
             </div>
           </Listbox>
         </div>
@@ -170,13 +160,15 @@ const PexelsSlider = ({ appSize }) => {
                       onClick={() => setSelectedImage(img)}
                     />
                     <button
-                      className={`pexels-slider__favorite-button ${isFavorite ? "pexels-slider__favorite-active" : ""
-                        }`}
+                      className={`pexels-slider__favorite-button ${
+                        isFavorite ? 'pexels-slider__favorite-active' : ''
+                      }`}
                       onClick={() => toggleFavorite(img)}
                     >
                       <HeartIcon
-                        className={`pexels-slider__heart-icon ${isFavorite ? "text-red-600" : "text-white/55"
-                          }`}
+                        className={`pexels-slider__heart-icon ${
+                          isFavorite ? 'text-red-600' : 'text-white/55'
+                        }`}
                       />
                     </button>
                   </div>
@@ -185,12 +177,9 @@ const PexelsSlider = ({ appSize }) => {
             })}
           </Slider>
         )}
-
       </div>
-      <SliderModal
-          image={selectedImage}
-          onClose={() => setSelectedImage(null)}
-        />
+
+      <SliderModal image={selectedImage} onClose={() => setSelectedImage(null)} />
     </div>
   );
 };

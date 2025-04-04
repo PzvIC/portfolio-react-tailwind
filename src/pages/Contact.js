@@ -1,14 +1,15 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiFreelancer, SiFiverr } from "react-icons/si";
-import "../styles/Contact.css";
-import UpworkLogo from "../assets/Upwork-logo.svg";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiFreelancer, SiFiverr } from 'react-icons/si';
+import '../styles/Contact.css';
+import UpworkLogo from '../assets/Upwork-logo.svg';
 
 function Contact({ appSize }) {
   return (
     <section className="contact-section">
       <h2 className="contact-heading">Let's work together</h2>
       <p className="contact-paragraph">
-        I'm open to freelance projects and collaborations. Feel free to reach out through any of the platforms below.
+        I'm open to freelance projects and collaborations. Feel free to reach out through any of the
+        platforms below.
       </p>
       <div>
         <div className="contact-icons-3">

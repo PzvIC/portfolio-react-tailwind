@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const BASE_URL = "https://api.pexels.com/v1/";
+const BASE_URL = 'https://api.pexels.com/v1/';
 
 const usePexels = (query, perPage = 20) => {
   const [data, setData] = useState([]);

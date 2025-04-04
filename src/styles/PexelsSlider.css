@@ -42,7 +42,6 @@
   @apply relative max-w-[90%] flex items-center justify-center mx-auto;
 }
 
-
 .pexels-slider__image {
   @apply w-full h-[300px] object-cover rounded-lg transition-transform duration-300;
 }
@@ -203,7 +202,6 @@
   @apply -right-4;
 }
 
-
 .pexels-arrow--tablet {
   top: 42% !important;
 }
@@ -246,4 +244,3 @@
 .animate-fade-in {
   animation: fade-in 0.6s ease-out both;
 }
-

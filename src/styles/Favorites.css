@@ -15,10 +15,9 @@
   transform: translateX(100px);
 }
 
-
 .to-top-button__tablet {
   transform: translateX(300px);
-  bottom: 16rem; 
+  bottom: 16rem;
 }
 
 .to-top-button__desktop {
@@ -29,5 +28,5 @@
 }
 
 .to-top-icon {
-  @apply h-8 w-8 text-gray-700
+  @apply h-8 w-8 text-gray-700;
 }
