@@ -17,7 +17,7 @@ function Header({ setAppSize, appSize, setManualOverride }) {
   return (
     <header className={`header ${appSize === 'mobile' ? 'header--mobile' : ''}`}>
       <div className="header__content">
-        <h1 className="header__title">Portfolio</h1>
+        <h1 className="header__title">Favoritos</h1>
         <p className="header__subtitle">By: Carlos Palkovic</p>
       </div>
 

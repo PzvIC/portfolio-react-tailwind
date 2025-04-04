@@ -66,7 +66,7 @@ const PexelsSlider = ({ appSize }) => {
   };
 
   return (
-    <div>
+    <div className="pexels-main__container">
       <div className="pexels-slider">
         <p className="pexels-slider__info">
           The images come from the API of{' '}
