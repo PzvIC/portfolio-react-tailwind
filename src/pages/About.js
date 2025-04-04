@@ -21,7 +21,7 @@ function About() {
         The site includes a <strong>dark mode switch</strong> in the navigation bar, allowing users to toggle between light and dark themes. This preference is saved in localStorage to ensure it remains after closing or refreshing the page.
       </p>
       <p>
-        A notable feature is the implementation of <strong>three buttons (Desktop, Tablet, and Mobile)</strong> that simulate how the site looks on different devices. This required custom logic beyond media queries to fully control the visual experience.
+        A notable feature is the implementation of <strong>three buttons (Desktop, Tablet, and Mobile)</strong> that simulate how the site looks on different devices. This required custom logic beyond media queries to fully control the visual experience. <strong>This functionality is only available on screens wider than 1024 pixels</strong>, ensuring it's used in a desktop or laptop environment where full layout simulation is meaningful.
       </p>
       <p>
         On the <strong>Favorites</strong> page, users can view all the images they marked from the Home page. This section includes:

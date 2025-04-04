@@ -5,7 +5,7 @@
 }
 
 .footer__mobile{
-    @apply justify-center
+    @apply justify-center;
 }
 
 .footer-title {
@@ -25,7 +25,7 @@
 }
 
 .footer-list__mobile {
-    @apply flex flex-row gap-10 px-10 py-6;
+    @apply flex flex-row gap-7 px-10 py-6;
 }
 
 .footer-link {

@@ -6,6 +6,8 @@ import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 function Favorites({ appSize }) {
     const [showScrollTop, setShowScrollTop] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,9 +26,9 @@ function Favorites({ appSize }) {
     return (
         <div>
             <div className="favorites-page relative">
-                <Search appSize={appSize} />
+                <Search appSize={appSize} onModalToggle={setIsModalOpen} />
             </div>
-            {showScrollTop && (
+            {showScrollTop && !isModalOpen && (
                 <button
                     onClick={scrollToTop}
                     className={`to-top-button to-top-button__${appSize}`}
@@ -35,6 +37,7 @@ function Favorites({ appSize }) {
                     <ChevronUpIcon className="to-top-icon" />
                 </button>
             )}
+
         </div>
     );
 }

@@ -26,6 +26,10 @@
   @apply text-gray-500 font-semibold no-underline transition-colors duration-300;
 }
 
+.header__link:disabled {
+  @apply opacity-40 cursor-not-allowed;
+}
+
 .header__link:hover {
   @apply underline text-gray-900;
 }

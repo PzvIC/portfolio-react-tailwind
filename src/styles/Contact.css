@@ -11,8 +11,9 @@
     @apply text-base md:text-lg mb-6 max-w-xl;
   }
   
-  .contact-icons {
-    @apply flex gap-6 text-5xl;
+  .contact-icons-3,
+  .contact-icons-2 {
+    @apply flex gap-6 text-5xl align-middle justify-center;
   }
   
   .contact-link {

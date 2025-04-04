@@ -4,7 +4,7 @@ import { SliderModal } from "./SliderModal";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import "../styles/Search.css";
 
-function Search({ appSize }) {
+function Search({ appSize, onModalToggle }) {
     const { favorites, removeFavorite } = useFavorites();
     const [query, setQuery] = useState("");
     const [selectedImage, setSelectedImage] = useState(null);
@@ -19,6 +19,16 @@ function Search({ appSize }) {
         if (appSize === "mobile") return photo.src.medium;
         if (appSize === "tablet") return photo.src.large;
         return photo.src.large;
+    };
+
+    const handleOpenModal = (photo) => {
+        setSelectedImage(photo);
+        onModalToggle?.(true);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedImage(null);
+        onModalToggle?.(false);
     };
 
     return (
@@ -53,7 +63,7 @@ function Search({ appSize }) {
                                     src={getImageSrc(photo)}
                                     alt={photo.alt}
                                     className="photo-image"
-                                    onClick={() => setSelectedImage(photo)}
+                                    onClick={() => handleOpenModal(photo)}
                                 />
 
                                 <div className={`photo-text-container photo-text-container__${appSize}`}>
@@ -75,7 +85,7 @@ function Search({ appSize }) {
                     <SliderModal
                         image={selectedImage}
                         appSize={appSize}
-                        onClose={() => setSelectedImage(null)}
+                        onClose={handleCloseModal}
                     />
                 )}
             </div>

@@ -1,31 +1,21 @@
 .slider-modal {
-  @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50;
+  @apply fixed inset-0 z-50;
 }
 
 .slider-modal__overlay {
-  @apply absolute inset-0;
+  @apply absolute inset-0 bg-black bg-opacity-80;
 }
 
 .slider-modal__content {
-  @apply relative bg-white dark:bg-gray-900 p-2 pt-6 rounded-lg shadow-lg flex flex-col items-center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 85vw;
-  max-height: 80vh;
+  @apply relative w-full h-full flex items-center justify-center;
 }
 
 .slider-modal__image {
-  @apply object-contain rounded-lg;
-  width: 90%;
-  height: auto;
-  max-width: 80vw;
-  max-height: 80vh;
+  @apply w-full h-full object-contain;
 }
 
 .slider-modal__close {
-  @apply absolute left-1/2 -top-20 flex items-center justify-center w-16 h-16 rounded-full bg-black/70 text-white cursor-pointer transition;
-  transform: translateX(-50%);
+  @apply absolute top-4 right-4 flex items-center justify-center w-16 h-16 rounded-full bg-black/70 text-white cursor-pointer transition z-10;
 }
 
 .slider-modal__close:hover {
@@ -33,20 +23,15 @@
 }
 
 .slider-modal__close-icon {
-  @apply w-10 h-10 text-green-200 transition-transform duration-300;
+  @apply w-12 h-12 text-green-200 transition-transform duration-300;
 }
 
 .slider-modal__close:hover .slider-modal__close-icon {
   @apply rotate-[360deg] text-green-400;
 }
 
-.slider-modal__text {
-  @apply text-green-700 dark:text-green-200 text-center mt-2 mb-2;
-}
-
 .slider-modal__favorite-button {
-  @apply absolute left-1/2 -bottom-20 flex items-center justify-center w-16 h-16 rounded-full bg-black/70 transition;
-  transform: translateX(-50%);
+  @apply absolute top-4 left-4 flex items-center justify-center w-16 h-16 rounded-full bg-black/70 transition z-10;
 }
 
 .slider-modal__favorite-button:hover,
@@ -55,7 +40,7 @@
 }
 
 .slider-modal__heart-icon {
-  @apply w-10 h-10 text-green-200 hover:text-green-400 transition-transform duration-300;
+  @apply w-12 h-12 text-green-200 hover:text-green-400 transition-transform duration-300;
 }
 
 .slider-modal__favorite-active .slider-modal__heart-icon {
@@ -64,4 +49,8 @@
 
 .slider-modal__favorite-button:hover .slider-modal__heart-icon {
   @apply scale-[1.2];
+}
+
+.slider-modal__text {
+  @apply absolute bottom-4 left-4 text-green-200 bg-black/90 px-4 py-2 rounded-lg z-10 text-xl;
 }
