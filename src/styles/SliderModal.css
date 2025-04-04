@@ -7,7 +7,7 @@
 }
 
 .slider-modal__content {
-  @apply relative w-full h-full flex items-center justify-center;
+  @apply relative w-full h-full flex items-center justify-center p-4;
 }
 
 .slider-modal__image {
