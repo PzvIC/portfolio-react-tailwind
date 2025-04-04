@@ -6,7 +6,7 @@ function About() {
       <h1 className="about-title">About This Project</h1>
       <div className="about-divider" />
       <p>
-        This website is my personal portfolio as a front-end developer, created with a focus on
+        This website is a project part of my personal portfolio as a front-end developer, created with a focus on
         clarity, functionality, and modern design.
       </p>
       <p>
